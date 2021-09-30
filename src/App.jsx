@@ -17,6 +17,11 @@ export function App() {
 
   const todoTaskRef = useRef(); // todoTaskRef: ref to the input field
 
+  const handleClearAll = () => {
+    const newTodos = todos.filter((todo) => !todo.completed);
+    setTodos(newTodos);
+};  
+
   const handleTodoAdd = () => {
     const task = todoTaskRef.current.value; // get the value of the input
     if (task === "") return; // if the input is empty, do nothing
@@ -33,7 +38,7 @@ export function App() {
       <input ref={todoTaskRef} type="text" placeholder="Nueva tarea" />{" "}
       {/* ref to the input field */}
       <button onClick={handleTodoAdd}>➕</button> {/* add a new todo */}
-      <button>❌</button> {/* delete all todos */}
+      <button onClick={handleClearAll}>❌</button> {/* delete all todos */}
       <div>Te quedan {todos.filter((todo) => !todo.completed).length} tareas por terminar</div>
     </Fragment>
   );
