@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
+import { TodoList } from "./components/TodoList";
 
-export function App(){
-    return (
-        <div>Hola mundo!!!</div>
-    )
+export function App() {
+  
+  return <TodoList/>;
 }
