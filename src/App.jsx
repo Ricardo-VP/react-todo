@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { TodoList } from "./components/TodoList";
 
 export function App() {
-  
-  return <TodoList/>;
+  const [todos, setTodos] = useState([
+      { id: 1, text: "Learn React", completed: false },
+  ]);
+  return <TodoList todos={todos} />;
 }
